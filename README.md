@@ -12,15 +12,16 @@ Convert SRT files to Praat TextGrid format with customizable speaker names. This
 - Python 3.6 or higher is required
 - SRT filed with at most 2 unique speakers
 
-## Usage
+## Installation and Running the Script
 1. Download the script file `srt_textgrid_converter.py` to your computer.
 2. Ensure Python 3.6+ is installed and accessible via your terminal
-3a. Type in the following command into your command prompt
+3a. Type in the following command into your command prompt, terminal, or Anaconda Prompt
 ```bash
 python "path\to\srt_textgrid_converter.py"
 ```
+4. The command prompt will prompt you with some questions about file paths and speaker names. Enter these in one at a time.
 
-3b. OR type the following command into your command prompt
+3b. OR type the following command into your command prompt, terminal, or Anaconda Prompt
 ```bash
 python "path\to\srt_textgrid_converter.py" path\to\input\srt\folder path\to\output\textgrid\folder Speaker1NameDisplayedOnSRT Speaker2NameDisplayedOnSRT
 ```
