@@ -1,3 +1,5 @@
+# SRT to TextGrid Converter
+
 Convert SRT files to Praat TextGrid format with customizable speaker names. This script is designed to help linguists and researchers quickly convert subtitle files into TextGrid format for linguistic analysis.
 
 ## Features
