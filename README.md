@@ -5,19 +5,20 @@ Convert SRT files to Praat TextGrid format with customizable speaker names. This
 ## Features
 - Supports custom speaker names.
 - Handles silent intervals automatically.
-- Easy-to-use interactive and command-line modes.
+- Easy-to-use command line input
 
 ## Requirements
-- Python 3.6 or higher.
-
-## Installation
-1. Download the script file `srt_textgrid_converter.py` to your computer.
-2. Ensure Python 3.6+ is installed and accessible via your terminal.
-3. Navigate to the folder where the script is located.
+- This script was written on Python 3.12.8
+- Python 3.6 or higher is required
+- SRT filed with at most 2 unique speakers
 
 ## Usage
+1. Download the script file `srt_textgrid_converter.py` to your computer.
+2. Ensure Python 3.6+ is installed and accessible via your terminal
+3a. Type in the following command into your command prompt
+'''bash
+python "path\to\srt_textgrid_converter.py"
 
-### Interactive Mode
-Run the script without any arguments to be prompted for input and output folders, as well as custom speaker names:
-```bash
-python srt_textgrid_converter.py
+3b. OR type the following command into your command prompt
+'''bash
+python "path\to\srt_textgrid_converter.py" path\to\input\srt\folder path\to\output\textgrid\folder Speaker1NameDisplayedOnSRT Speaker2NameDisplayedOnSRT
