@@ -18,7 +18,7 @@ Convert SRT files to Praat TextGrid format with customizable speaker names. This
 3. Select option 3a or 3b to run your script:
 <br>
 **3a.** Type in the following command into your command prompt, terminal, or Anaconda Prompt
-
+<br>
 ```bash
 python "path\to\srt_textgrid_converter.py"
 ```
