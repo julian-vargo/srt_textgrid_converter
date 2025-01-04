@@ -2,15 +2,10 @@
 
 Convert SRT files to Praat TextGrid format via the command line. This script is particularly useful for converting .srt outputs from automatic transcribers like sonix.ai or otter.ai and preparing them for forced alignment. The output places Speaker 1 on the first tier and Speaker 2 on the second tier. Silences are indicated with s\ on the final TextGrid.
 
-## Features
-- Supports custom speaker names.
-- Handles silent intervals automatically.
-- Easy-to-use command line input
-
 ## Requirements
-- This script was written on Python 3.12.8
+- Written on Python 3.12.8
 - Python 3.6 or higher is required
-- SRT filed with at most 2 unique speakers
+- .srt contains at most 2 unique speakers
 
 ## Installation and Running the Script
 1. Download the script file `srt_textgrid_converter.py` to your computer.
