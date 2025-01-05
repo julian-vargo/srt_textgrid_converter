@@ -7,7 +7,7 @@ from pathlib import Path
 print("-")
 print("SRT to TextGrid Converter")
 print("-")
-print("Vargo, Julian (2024). SRT to TextGrid Converter [Python Script].")
+print("Vargo, Julian (2025). SRT to TextGrid Converter [Python Script].")
 print("\tDepartment of Spanish and Portuguese. UC Berkeley.")
 print("-")
 
