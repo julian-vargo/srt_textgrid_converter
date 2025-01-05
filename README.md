@@ -28,6 +28,6 @@ python "path\to\srt_textgrid_converter.py" path\to\input\srt\folder path\to\outp
 ```
 
 <br>
-## Citation<br>
+## Citation
 Vargo, Julian (2025). SRT to TextGrid File Converter [Python Script].<br>
 Department of Spanish and Portuguese. UC Berkeley.<br>
