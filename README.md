@@ -27,7 +27,6 @@ python "path\to\srt_textgrid_converter.py"
 python "path\to\srt_textgrid_converter.py" path\to\input\srt\folder path\to\output\textgrid\folder Speaker1NameDisplayedOnSRT Speaker2NameDisplayedOnSRT
 ```
 
-<br>
 
 ## Citation
 Vargo, Julian (2025). SRT to TextGrid File Converter [Python Script].<br>
