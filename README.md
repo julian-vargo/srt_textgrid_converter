@@ -8,7 +8,7 @@ Convert .srt files to Praat TextGrid format via the command line. This script is
 - .srt contains at most 2 unique speakers
 
 ## Installation and Running the Script
-There are two ways to run the program: 
+There are two ways to run the program: <br>
 A) Download the .exe file and click it to run the program
 
 B) use the command line:
