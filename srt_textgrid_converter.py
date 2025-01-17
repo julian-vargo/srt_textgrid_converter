@@ -3,7 +3,6 @@ import codecs
 import argparse
 from pathlib import Path
 
-# Opening Message
 print("-")
 print("SRT to TextGrid Converter")
 print("-")
@@ -11,7 +10,7 @@ print("Vargo, Julian (2025). SRT to TextGrid Converter [Python Script].")
 print("\tDepartment of Spanish and Portuguese. UC Berkeley.")
 print("-")
 
-# Split the .srt file's time formatting into interpretable TextGrid time formatting
+#split the .srt file's time formatting into interpretable TextGrid time formatting
 class srtInterval:
     def __init__(self, number, range, content):
         self.number = number[:]
@@ -60,7 +59,7 @@ def process_file(inFile, output_file_path, speaker1_name="Speaker1", speaker2_na
     last_end_time_speaker1 = 0
     last_end_time_speaker2 = 0
 
-    # Check if speaker2_name is not empty
+    #Check if speaker2_name is not empty
     if speaker2_name.strip():
         for start, end, speaker, content in intervals:
             if speaker == speaker2_name and last_end_time_speaker1 < start:
@@ -80,7 +79,7 @@ def process_file(inFile, output_file_path, speaker1_name="Speaker1", speaker2_na
                 speaker2_tier.append((start, end, content))
                 last_end_time_speaker2 = end
     else:
-        # Process only speaker1
+        #Process only speaker1 if the speaker 2 label is empty
         for start, end, speaker, content in intervals:
             if speaker == speaker1_name:
                 if last_end_time_speaker1 < start:
@@ -91,7 +90,7 @@ def process_file(inFile, output_file_path, speaker1_name="Speaker1", speaker2_na
     xmax = max(last_end_time_speaker1, last_end_time_speaker2)
     speaker1_tier = merge_silent_intervals(speaker1_tier)
     speaker2_tier = merge_silent_intervals(speaker2_tier) if speaker2_name.strip() else []
-
+    #This is the actual "writer" part of the script where your textgrid gets written
     try:
         with open(output_file_path, 'w') as output_file:
             output_file.write("File type = \"ooTextFile\"\n")
@@ -129,8 +128,8 @@ def process_file(inFile, output_file_path, speaker1_name="Speaker1", speaker2_na
         print(f"Error while writing TextGrid file: {e}")
 
 
-# Defines merging silent intervals
-# If you'd like to express silent intervals differently, you can modify this function.
+#Defines merging silent intervals
+#The way the script works is by taking any instance of silence, and then multiple adjacent silences are pasted together and the text is merged
 def merge_silent_intervals(tier):
     merged = []
     for start, end, text in tier:
@@ -140,13 +139,13 @@ def merge_silent_intervals(tier):
             merged.append((start, end, text))
     return merged
 
-# If your input/output paths contain quotes, this will strip the quotes from your copy-pasted file paths.
+#If your input/output paths contain quotes, this will strip the quotes from your copy-pasted file paths.
 def clean_path_quotes(path):
     return path.strip('"')
 
-# Sets up the function to actually carry out the processing through the command line
+#main() is the function for the command line
 def main():
-    # Descriptions/help commands for command prompt usage
+    #Descriptions in the command prompt
     parser = argparse.ArgumentParser(description="Convert SRT files to TextGrids ready for forced alignment")
     parser.add_argument("input_folder", type=str, nargs="?", help="Path to the input folder containing SRT files. Quotation marks are optional")
     parser.add_argument("output_folder", type=str, nargs="?", help="Path to the output folder for TextGrid files. Quotation marks are optional")
@@ -154,7 +153,7 @@ def main():
     parser.add_argument("--speaker2", type=str, default="Speaker2", help="Use the name for Speaker 2 found in your SRT files. Leave field blank if there is no speaker 2")
     args = parser.parse_args()
 
-    # Two-choice folder input selection system. You can enter in all your required folders/names
+    #enter in all your required folders/names
     input_folder = args.input_folder or input("Enter the input folder path containing SRT files: ").strip()
     output_folder = args.output_folder or input("Enter the desired output folder path where your TextGrid files will end up: ").strip()
     input_folder = clean_path_quotes(input_folder)
@@ -162,7 +161,7 @@ def main():
     speaker1_name = input(f"Enter the name for Speaker 1 (default: {args.speaker1}): ").strip() or args.speaker1
     speaker2_name = input(f"Enter the name for Speaker 2 (leave blank if none, default: {args.speaker2}): ").strip()
 
-    # Use the process_file function to carry out the processing
+    #combines everything together to make the textgrid - the meat of this part is the process_file() line
     Path(output_folder).mkdir(parents=True, exist_ok=True)
     for filename in os.listdir(input_folder):
         if filename.endswith(".srt"):
@@ -174,3 +173,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
