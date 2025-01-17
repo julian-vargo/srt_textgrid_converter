@@ -8,6 +8,10 @@ Convert .srt files to Praat TextGrid format via the command line. This script is
 - .srt contains at most 2 unique speakers
 
 ## Installation and Running the Script
+There are two ways to run the program: 
+A) Download the .exe file and click it to run the program
+
+B) use the command line:
 1. Download the script file `srt_textgrid_converter.py` to your computer.
 2. Ensure Python 3.6+ is installed and accessible via your terminal.
 3. Select option 3a or 3b to run your script:
