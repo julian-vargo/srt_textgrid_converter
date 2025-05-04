@@ -1,37 +1,18 @@
 # SRT to TextGrid Converter
 
-Convert .srt files to Praat TextGrid format via the command line. This script is particularly useful for converting .srt outputs from automatic transcribers like sonix.ai or otter.ai and preparing them for forced alignment. The output places Speaker 1 on the first tier and Speaker 2 on the second tier. Silences are indicated with s\ on the final TextGrid but need not be prewritten into your SRT.
+Convert .srt files to Praat TextGrid format. This program is excellent for converting .srt outputs from automatic transcribers like sonix.ai or otter.ai and preparing them for corpus development or forced alignment. The output places Speaker 1 on the first tier and (optionally) Speaker 2 on the second tier. Silences are indicated with a period "." on the final TextGrid and are automatically created by detecting gaps in the SRT.
+
+## Installation and Running the Script
+To run the program: <br>
+-Download the .py file and run the program (you can do this through the command line or through an app that can run Python like VS Code. <br>
+
+A user interface will appear. Just enter your desired file paths and speaker names into the entry box, and click "start processing".
+
+## Citation
+Vargo, Julian (2025). SRT to TextGrid File Converter [Python Script].<br>
+Department of Spanish and Portuguese. UC Berkeley.<br>
 
 ## Requirements
 - Written on Python 3.12.8
 - Python 3.6 or higher is required
 - .srt contains at most 2 unique speakers
-
-## Installation and Running the Script
-There are two ways to run the program: <br>
-A) Download the .exe file and click it to run the program
-
-B) use the command line:
-1. Download the script file `srt_textgrid_converter.py` to your computer.
-2. Ensure Python 3.6+ is installed and accessible via your terminal.
-3. Select option 3a or 3b to run your script:
-
-**3a.** Type in the following command into your command prompt, terminal, or Anaconda Prompt
-
-```bash
-python "path\to\srt_textgrid_converter.py"
-```
-
-**3a cont.** Then, the command prompt will ask you some questions about file paths and speaker names. Enter these in one at a time.
-
-<br>
-
-**3b.** OR type the following command into your command prompt, terminal, or Anaconda Prompt
-```bash
-python "path\to\srt_textgrid_converter.py" path\to\input\srt\folder path\to\output\textgrid\folder Speaker1NameDisplayedOnSRT Speaker2NameDisplayedOnSRT
-```
-
-
-## Citation
-Vargo, Julian (2025). SRT to TextGrid File Converter [Python Script].<br>
-Department of Spanish and Portuguese. UC Berkeley.<br>
